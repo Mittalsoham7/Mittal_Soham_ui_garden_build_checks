@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "dependencies": {
     "@types/styled-components": "^5.1.35",
     "styled-components": "^6.1.19"
