@@ -1,0 +1,104 @@
+INSTRUCTIONS FOR RUNNING AND DEMONSTRATING THE COMPONENT LIBRARY PROJECT
+
+This document provides step-by-step instructions for professors to run, test, and evaluate the mittal_soham_ui_garden component library project.
+
+PREREQUISITES:
+- Node.js (version 16 or higher)
+- npm (comes with Node.js)
+- Docker (for containerized deployment)
+- Git (for version control)
+
+STEP 1: CLONE AND SETUP THE PROJECT
+1. Clone the repository:
+   git clone https://github.com/[YOUR_GITHUB_USERNAME]/mittal_soham_ui_garden.git
+   cd mittal_soham_ui_garden
+
+2. Install dependencies:
+   npm install
+
+STEP 2: RUN CODE QUALITY CHECKS
+1. Run linting:
+   npm run lint
+   (This will check for code style issues using ESLint)
+
+2. Run code formatting:
+   npm run format
+   (This will format all TypeScript/React files using Prettier)
+
+STEP 3: RUN TESTS
+1. Run the test suite:
+   npm run test
+   (This will run all component tests using Vitest and show results)
+
+2. Expected output: "Test Files 16 passed (16), Tests 34 passed (34)"
+
+STEP 4: BUILD THE PROJECT
+1. Build Storybook for production:
+   npm run build-storybook
+   (This creates a production build in the storybook-static directory)
+
+STEP 5: RUN STORYBOOK LOCALLY
+1. Start Storybook development server:
+   npm run storybook
+   (This starts Storybook on http://localhost:6006)
+
+2. Open browser and navigate to http://localhost:6006
+3. Browse through all 13 components and their stories
+4. Test the controls for text color and background color
+
+STEP 6: DOCKER DEPLOYMENT
+1. Build the Docker image:
+   docker build -t mittal_soham_ui_garden .
+
+2. Run the container:
+   docker run -d -p 8083:80 --name mittal_soham_ui_garden_container mittal_soham_ui_garden
+
+3. Access the production Storybook at http://localhost:8083
+
+STEP 7: VERIFY PRE-COMMIT HOOKS
+1. Make a small change to any .tsx file (e.g., add a comment)
+2. Try to commit:
+   git add .
+   git commit -m "Test commit"
+3. The pre-commit hook should run lint, format, and test automatically
+4. If any checks fail, the commit will be blocked
+
+STEP 8: GITHUB ACTIONS CI/CD
+1. Push changes to the GitHub repository
+2. Go to the "Actions" tab in GitHub
+3. Verify that the CI workflow runs on push/PR
+4. The workflow will run: install, lint, format, test, build-storybook
+5. If any step fails, the build will fail and you'll be notified
+
+COMPONENTS INCLUDED:
+- Button
+- Label
+- Text
+- Table, TableHeader, TableRow, TableCell, TableFooter
+- Dropdown
+- RadioButton
+- Img
+- HeroImage
+- Card
+
+Each component has:
+- TypeScript types (.types.ts)
+- Implementation (.tsx)
+- Storybook stories (.stories.tsx)
+- Tests (.tests.tsx)
+- Index file for exports
+
+EVALUATION CHECKLIST:
+- [ ] All 13 components created and functional
+- [ ] TypeScript types properly defined
+- [ ] Styled Components used for styling
+- [ ] Storybook stories with color controls
+- [ ] Tests pass (34 tests)
+- [ ] ESLint passes without errors
+- [ ] Prettier formatting applied
+- [ ] Pre-commit hooks working
+- [ ] GitHub Actions CI/CD configured
+- [ ] Docker container builds and runs
+- [ ] Production build accessible on localhost:8083
+
+CONTACT: If you encounter any issues, please check the README.md file for additional details.
