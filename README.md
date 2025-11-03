@@ -46,13 +46,13 @@ Each component includes:
 ### Build the Docker Image
 
 ```bash
-docker build -t mittal_soham_coding_assignment13 .
+docker build -t mittal_soham_ui_garden .
 ```
 
 ### Run the Container
 
 ```bash
-docker run -d -p 8083:80 --name mittal_soham_coding_assignment13 mittal_soham_coding_assignment13
+docker run -d -p 8083:80 --name mittal_soham_ui_garden_container mittal_soham_ui_garden
 ```
 
 ### Access the Application
@@ -109,3 +109,4 @@ Run tests with: `npm test`
 Tests cover:
 - Component visibility
 - Disabled state styling changes
+
